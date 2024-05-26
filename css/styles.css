@@ -1,0 +1,20 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    max-width: 600px;
+    margin: auto;
+}
+
+#quiz-container {
+    text-align: center;
+}
+
+.option {
+    margin: 10px 0;
+}
+
+#certificate {
+    display: none;
+}
