@@ -2,6 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionContainer = document.getElementById("question-container");
   const nextBtn = document.getElementById("next-btn");
   const submitBtn = document.getElementById("submit-btn");
+  const resultAlert = document.getElementById("result-alert");
+  const nameInputContainer = document.getElementById("name-input-container");
+  const generateCertificateBtn = document.getElementById(
+    "generate-certificate-btn"
+  );
   let currentQuestionIndex = 0;
   let score = 0;
 
@@ -27,20 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
   function showQuestion() {
     const questionData = questions[currentQuestionIndex];
     questionContainer.innerHTML = `
-            <h6>${questionData.question}</h6>
-            ${questionData.options
-              .map(
-                (option, index) => `
-                <div class="form-check option">
-                    <input class="form-check-input" type="radio" name="option" id="option${index}" value="${option}">
-                    <label class="form-check-label" for="option${index}">
-                        ${option}
-                    </label>
-                </div>
-            `
-              )
-              .join("")}
-        `;
+          <h6 class="mb-4">${questionData.question}</h6>
+          ${questionData.options
+            .map(
+              (option, index) => `
+              <div class="form-check option mb-2">
+                  <input class="form-check-input" type="radio" name="option" id="option${index}" value="${option}">
+                  <label class="form-check-label" for="option${index}">
+                      ${option}
+                  </label>
+              </div>
+          `
+            )
+            .join("")}
+      `;
   }
 
   nextBtn.addEventListener("click", () => {
@@ -66,23 +71,34 @@ document.addEventListener("DOMContentLoaded", () => {
   submitBtn.addEventListener("click", () => {
     const percentage = (score / questions.length) * 100;
     if (percentage >= 80) {
-      generateCertificate();
+      showResult("Congratulations! You passed the quiz.", "success");
+      nameInputContainer.style.display = "block";
     } else {
-      alert("Sorry, you did not pass. Try again!");
-      location.reload();
+      showResult("Sorry, you did not pass. Try again!", "danger");
     }
   });
 
-  function generateCertificate() {
-    // Use jsPDF or a similar library to generate a PDF
+  generateCertificateBtn.addEventListener("click", () => {
+    const name = document.getElementById("name").value;
+    if (name) {
+      generateCertificate(name);
+    } else {
+      alert("Please enter your name!");
+    }
+  });
+
+  function showResult(message, type) {
+    resultAlert.className = `alert alert-${type}`;
+    resultAlert.textContent = message;
+    resultAlert.style.display = "block";
+  }
+
+  function generateCertificate(name) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     doc.text("Certificate of Achievement", 20, 20);
-    doc.text(
-      `Congratulations! You scored ${score} out of ${questions.length}`,
-      20,
-      30
-    );
+    doc.text(`Congratulations, ${name}!`, 20, 30);
+    doc.text(`You scored ${score} out of ${questions.length}`, 20, 40);
     doc.save("certificate.pdf");
   }
 

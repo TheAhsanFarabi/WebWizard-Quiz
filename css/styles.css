@@ -18,3 +18,17 @@ body {
 #certificate {
     display: none;
 }
+
+h6 {
+    font-weight: bold;
+}
+
+#result-alert {
+    text-align: center;
+}
+
+#name-input-container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
