@@ -12,21 +12,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const questions = [
     {
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Madrid"],
-      answer: "Paris",
+      question: "Which HTML tag is used to define an unordered list?",
+      options: ["<ul>", "<ol>", "<li>", "<list>"],
+      answer: "<ul>",
     },
     {
-      question: "Who wrote 'To Kill a Mockingbird'?",
-      options: [
-        "Harper Lee",
-        "Mark Twain",
-        "Ernest Hemingway",
-        "F. Scott Fitzgerald",
-      ],
-      answer: "Harper Lee",
+      question: "What is the correct way to declare a variable in JavaScript?",
+      options: ["variable x;", "var x;", "v x;", "let x;"],
+      answer: "var x;",
     },
-    // Add more questions as needed
+    {
+      question:
+        "What property is used to set the background color of an element in CSS?",
+      options: [
+        "background-color",
+        "bgcolor",
+        "color-background",
+        "background",
+      ],
+      answer: "background-color",
+    },
+    {
+      question:
+        "What is the output of the following JavaScript code: console.log(typeof [1, 2, 3]);",
+      options: ["array", "object", "number", "undefined"],
+      answer: "object",
+    },
+    {
+      question: "What function is used to output data to the screen in PHP?",
+      options: ["print_r()", "echo()", "display()", "print()"],
+      answer: "echo()",
+    },
+    {
+      question: "Which CSS property is used to change the font size of text?",
+      options: ["font-size", "text-size", "font-style", "text-font"],
+      answer: "font-size",
+    },
+    {
+      question: "Which tag is used to create a hyperlink in HTML?",
+      options: ["<url>", "<link>", "<a>", "<href>"],
+      answer: "<a>",
+    },
+    {
+      question: "What does CSS stand for?",
+      options: [
+        "Cascading Style Sheets",
+        "Creative Style Sheets",
+        "Computer Style Sheets",
+        "Colorful Style Sheets",
+      ],
+      answer: "Cascading Style Sheets",
+    },
+    {
+      question: "What is the purpose of the 'alt' attribute in the <img> tag?",
+      options: [
+        "Alternative text for the image",
+        "Alignment of the image",
+        "Animation of the image",
+        "Altitude of the image",
+      ],
+      answer: "Alternative text for the image",
+    },
+    {
+      question:
+        "What is the correct way to include an external JavaScript file?",
+      options: [
+        "<script src='script.js'>",
+        "<script type='text/javascript' src='script.js'>",
+        "<script type='script/javascript' src='script.js'>",
+        "<javascript src='script.js'>",
+      ],
+      answer: "<script src='script.js'>",
+    },
   ];
 
   function showQuestion() {
