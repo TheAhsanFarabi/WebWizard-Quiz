@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const questions = [
     {
       question: "Which HTML tag is used to define an unordered list?",
-      options: ["<ul>", "<ol>", "<li>", "<list>"],
-      answer: "<ul>",
+      options: ["ul", "ol", "li", "list"],
+      answer: "ul",
     },
     {
       question: "What is the correct way to declare a variable in JavaScript?",
@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       question: "Which tag is used to create a hyperlink in HTML?",
-      options: ["<url>", "<link>", "<a>", "<href>"],
-      answer: "<a>",
+      options: ["url", "link", "a", "href"],
+      answer: "a",
     },
     {
       question: "What does CSS stand for?",
@@ -77,10 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
       question:
         "What is the correct way to include an external JavaScript file?",
       options: [
-        "<script src='script.js'>",
-        "<script type='text/javascript' src='script.js'>",
-        "<script type='script/javascript' src='script.js'>",
-        "<javascript src='script.js'>",
+        "script src='script.js'",
+        "script type='text/javascript' src='script.js'",
+        "script type='script/javascript' src='script.js'",
+        "javascript src='script.js'",
       ],
       answer: "<script src='script.js'>",
     },
